@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAP MAKER</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pixelify+Sans:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header class="nav">
+		<h2></h2>
+		<ul>
+			<a href="">
+				<li></li>
+			</a>
+			<a href="">
+				<li></li>
+			</a>
+			<a href="">
+				<li></li>
+			</a>
+		</ul>
+	</header>
+	<header class="nav">
+		<h2>map maker</h2>
+		<ul>
+			<a href="#">
+				<li>About</li>
+			</a>
+			<a href="#">
+				<li>Contact</li>
+			</a>
+			<a href="#">
+				<li>Home</li>
+			</a>
+		</ul>
+	</header>
+	<div class="container">
+		<div class="infs">
+			<h3 style="color: gold;">map maker   --   settings</h3>
+			<div class="options" id="opt1">
+				<p>width</p>
+				<input type="text" id="width" value="" disabled/>
+			</div>
+			<div class="options" id="opt2">
+				<p>height</p>
+				<input type="text" id="height" value="" disabled/>
+			</div>
+			<div class="options" id="opt3">
+				<p>wall color</p>
+				<input type="color" id="wallc" value="#c15d00" disabled/>
+			</div>
+			<div class="options" id="opt4">
+				<p>cell color</p>
+				<input type="color" id="cellc" value="#0cda0c" disabled/>
+			</div>
+			<div class="options" id="opt5">
+				<p>empty color</p>
+				<input type="color" id="emptyc" value="#FFFFFF" disabled/>
+			</div>
+			<div class="options">
+				<p>fill with</p>
+				<button id="fillW" onclick="changeFill()"></button>
+			</div>
+			<div class="btns">
+				<button class="edit" id="edit">edit map</button>
+				<button class="export" onclick="export_map()">export map</button>
+			</div>
+		</div>
+		<div class="mapa" id="map"></div>
+	</div>
+</body>
+<script src="./script.js"></script>
+</html>
