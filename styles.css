@@ -19,9 +19,6 @@ body {
 	font-family: "rubik";
 	display: flex;
 }
-.nav h2 {
-	margin-left: 20px;
-}
 ul {
 	float: right;
 	width: 80%;
@@ -127,4 +124,10 @@ ul li {
 	height: 30px;
 	border-radius: 50%;
 	border: 1px solid white;
+}
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 20px;
 }

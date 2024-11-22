@@ -4,6 +4,7 @@ let inpt = selectedEl.childNodes[3];
 let fillWith = 0;
 let mapArr = [];
 let wallC, emptyC, cellC;
+let editMode = 1;
 
 document.onkeydown = (e) => {
     if (e.keyCode === 40 && selected < 5) {
@@ -23,6 +24,13 @@ document.onkeydown = (e) => {
         inpt.value = '';
         inpt.focus();
     }
+    else if (e.keyCode === 70)
+    {
+        editMode = (editMode === 0)?1:0;
+        document.getElementById("fillM").innerText = (editMode === 1)?"hover":"click";
+    }
+    else if (e.keyCode === 67)
+        changeFill();
 };
 
 setInterval(() => {
@@ -50,22 +58,25 @@ document.getElementById("edit").onclick = () => {
     mapArr = Array.from({ length: h }, () => Array(w).fill(0));
 
     for (let i = 0; i < h * w; i++) {
-        map.innerHTML += `<div class='cell' id='cell-${i}' style='background: ${emptyC}' onmouseover="change_cell(${i}, ${w})"></div>`;
+        map.innerHTML += `<div class='cell' id='cell-${i}' style='background: ${emptyC}' onclick="change_cell(${i}, ${w}, 0)" onmouseover="change_cell(${i}, ${w}, 1)"></div>`;
     }
 };
 
-const change_cell = (id, w) => {
-    let cell = document.getElementById(`cell-${id}`);
-    let row = Math.floor(id / w);
-    let col = id % w;
-    mapArr[row][col] = fillWith;
-
-    if (fillWith === 0) {
-        cell.style.background = emptyC;
-    } else if (fillWith === 1) {
-        cell.style.background = cellC;
-    } else {
-        cell.style.background = wallC;
+const change_cell = (id, w, mode) => {
+    if (mode === editMode)
+    {
+        let cell = document.getElementById(`cell-${id}`);
+        let row = Math.floor(id / w);
+        let col = id % w;
+        mapArr[row][col] = fillWith;
+    
+        if (fillWith === 0) {
+            cell.style.background = emptyC;
+        } else if (fillWith === 1) {
+            cell.style.background = cellC;
+        } else {
+            cell.style.background = wallC;
+        }
     }
 };
 

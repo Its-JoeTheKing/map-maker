@@ -26,7 +26,10 @@
 		</ul>
 	</header>
 	<header class="nav">
-		<h2>map maker</h2>
+		<div class="logo">
+			<img src="logo.png" height="70px" alt="">
+			<!-- <img src="logo.png" style="height: 20px; transform: rotate(-45deg);"/><h2>map maker</h2> -->
+		</div>
 		<ul>
 			<a href="#">
 				<li>About</li>
@@ -66,7 +69,14 @@
 				<p>fill with</p>
 				<button id="fillW" onclick="changeFill()"></button>
 			</div>
+			<div class="options">
+				<p>fill mode</p>
+				<p id="fillM">click</p>
+			</div>
 			<div class="btns">
+				<p style="color: greenyellow; margin: 0;">to change settings up and down arrow keys then press enter to modify</p>
+				<p style="color: yellow; margin: 0;">to switch fill mode press f (fill on hover, fill on click)</p>
+				<p style="color: yellow; margin: 0; align-self: start;">press c to change fill color</p>
 				<button class="edit" id="edit">edit map</button>
 				<button class="export" onclick="export_map()">export map</button>
 			</div>
